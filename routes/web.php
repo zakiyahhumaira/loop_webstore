@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
 
 Route::view('/home', 'home')->name('home');
@@ -42,4 +42,6 @@ Route::post('loginvalidate', [UserController::class, 'loginvalidate'])->name('lo
 Route::resource('orders', OrderController::class);
 
 Route::get('/orders_delete/{id}', [OrderController::class, 'destroy'])->name('orders.destroy');
+Route::get('/order/search', [OrderController::class])->name('search');
+
 

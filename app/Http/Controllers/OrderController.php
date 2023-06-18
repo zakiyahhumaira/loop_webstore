@@ -94,4 +94,20 @@ class OrderController extends Controller
         Order::destroy($id);
         return redirect('orders')->with('flash_message', 'Order Deleted!');
     }
+
+    public function search(Request $request)
+    {
+        if($request->has('search'))
+        {
+            $orders = Order::where('item_name','LIKE','%'.$request->search.'%')->get();
+        }
+        else
+        {
+            $orders = Order::all();
+        }
+
+        return view('order',['order' => $orders]);
+    }
+
+
 }

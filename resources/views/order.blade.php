@@ -64,7 +64,7 @@
                 </li>
             </ul>
             <form class="d-flex">
-            <input class="form-control me-2" type="text" placeholder="Search">
+            <input class="form-control me-2" type="text" placeholder="Search" id="filter">
             <button class="btn btn-primary" type="button">Search</button>
             </form>
         </div>
@@ -204,6 +204,8 @@ EDIT ORDER
 </div>
 
 <br><br>
+
+<script src="{{ asset('js/script.js') }}"></script>
 
 </body>
 </html>

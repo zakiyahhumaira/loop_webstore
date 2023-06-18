@@ -5,9 +5,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.5
+    ); /* Warna gelap yang dapat disesuaikan */
+    z-index: 0;
+}
+
+.deskripsi {
+    z-index: 1;
+    color: white;
+}
+
+/* .carousel-item {
+    height: 100vh;
+    width: 300px;
+} */
+
+</style>
 </head>
 <body>
+
 <!--<nav class="navbar navbar-expand-sm bg-primary navbar-dark text-right">
   <div class="container">
     <ul class="navbar-nav">
@@ -64,28 +94,33 @@
                 </li>
             </ul>
             <form class="d-flex">
-            <input class="form-control me-2" type="text" placeholder="Search">
-            <button class="btn btn-primary" type="button">Search</button>
+            <input class="form-control me-2" type="text" placeholder="Search" style="">
+            <button class="btn btn-light-subtle text-white border border-light" type="button">Search</button>
             </form>
         </div>
     </div>
 </nav>
 
+  <div class="header p-5 bg-dark text-white">
+    <h1 class="fs-1">Welcome to Loop!</h1>
+    <p class="fs-5">Welcome to Loop, your one-stop online shop for all your beverage cravings
+        <br>
+        Indulge in the finest selection of coffee, tea, juice, water, soda, and olive oil </p>
+  </div>
 
-<div class="mt-4 p-5 bg-info text-white rounded">
-  <h1>Welcome to Loop</h1>
-  <p>Shopping anything you want...</p>
-</div>
+
 
 <br>
 
   <div class="container mt-3">
-    <h2>Coffe</h2>
-    <p>Buy your favorite coffee here</p>
     <div class="card" style="width:100%">
       <img class="card-img-top" src="{{ asset('img/coffee.png') }}" alt="Coffe image" style="width:100%">
-      <div class="card-body">
-        <a href="{{ route('order') }}" class="btn btn-primary">Start From Rp 30.000</a>
+      <div class="card-img-overlay">
+        <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
+            <h2>Coffee</h2>
+        <p>Awaken your senses with our rich, aromatic coffees. Start your day right!</p>
+        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        </div>
       </div>
     </div>
   </div>
@@ -93,12 +128,14 @@
   <br>
 
   <div class="container mt-3">
-    <h2>Tea</h2>
-    <p>Buy your favorite relaxing tea here</p>
     <div class="card" style="width:100%">
       <img class="card-img-top" src="{{ asset('img/tea.jpeg') }}" alt="Tea image" style="width:100%">
-      <div class="card-body">
-        <a href="{{ route('order') }}" class="btn btn-primary">Start From Rp 30.000</a>
+      <div class="card-img-overlay">
+        <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
+            <h2>Tea</h2>
+        <p>Indulge in the soothing tranquility of our finest teas. Find serenity in every sip.</p>
+        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        </div>
       </div>
     </div>
   </div>
@@ -106,12 +143,14 @@
   <br>
 
   <div class="container mt-3">
-    <h2>Juice</h2>
-    <p>Buy your favorite healthy juice here</p>
     <div class="card" style="width:100%">
       <img class="card-img-top" src="{{ asset('img/juice.jpeg') }}" alt="Juice image" style="width:100%">
-      <div class="card-body">
-        <a href="{{ route('order') }}" class="btn btn-primary">Buy</a>
+      <div class="card-img-overlay">
+        <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
+            <h2>Juice</h2>
+        <p>Revitalize your taste buds with our exquisite, handcrafted juices. Shop now!</p>
+        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        </div>
       </div>
     </div>
   </div>
@@ -119,12 +158,14 @@
   <br>
 
   <div class="container mt-3">
-    <h2>Water</h2>
-    <p>Buy your favorite fresh drink here</p>
     <div class="card" style="width:100%">
       <img class="card-img-top" src="{{ asset('img/water.jpeg') }}" alt="Water image" style="width:100%">
-      <div class="card-body">
-        <a href="{{ route('order') }}" class="btn btn-primary">Buy</a>
+      <div class="card-img-overlay">
+        <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
+            <h2>Water</h2>
+        <p>Stay hydrated and refreshed with our pure, revitalizing water. Drink to your well-being.</p>
+        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        </div>
       </div>
     </div>
   </div>
@@ -132,12 +173,14 @@
   <br>
 
   <div class="container mt-3">
-    <h2>Soda</h2>
-    <p>Buy your favorite soda here</p>
     <div class="card" style="width:100%">
       <img class="card-img-top" src="{{ asset('img/soda.png') }}" alt="Soda image" style="width:100%">
-      <div class="card-body">
-        <a href="{{ route('order') }}" class="btn btn-primary">Buy</a>
+      <div class="card-img-overlay">
+        <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
+            <h2>Soda</h2>
+        <p>Fizz up your day with our sparkling selection of sodas. Add a pop of joy to your moments.</p>
+        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        </div>
       </div>
     </div>
   </div>
@@ -145,16 +188,17 @@
   <br>
 
   <div class="container mt-3">
-    <h2>Olive Oil</h2>
-    <p>Buy your virgin oil olive</p>
     <div class="card" style="width:100%">
-      <img class="card-img-top" src="{{ asset('img/oliveoil.png') }}" alt="Water image" style="width:100%">
-      <div class="card-body">
-        <a href="{{ route('order') }}" class="btn btn-primary">Buy</a>
+      <img class="card-img-top" src="{{ asset('img/oliveoil.png') }}" alt="Olive Oil image" style="width:100%">
+      <div class="card-img-overlay">
+        <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
+            <h2>Olive Oil</h2>
+        <p>Elevate your culinary creations with our premium, flavorful olive oils. Taste the essence of excellence.</p>
+        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        </div>
       </div>
     </div>
   </div>
-
   <br><br>
 
 </body>

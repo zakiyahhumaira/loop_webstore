@@ -6,8 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <style>
+
+    .header {
+        background-color: #dfa87b;
+    }
+
+    #scrollToTopBtn {
+        display: none; /* Sembunyikan tombol secara default */
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        background-color: #000000;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px; /* Lebar */
+        height: 50px;
+        cursor: pointer;
+    }
+
+    #scrollToTopBtn:hover {
+        background-color: #0056b3;
+    }
+
+
     .card::before {
     content: "";
     position: absolute;
@@ -101,7 +126,7 @@
     </div>
 </nav>
 
-  <div class="header p-5 bg-dark text-white">
+  <div class="header p-5 ">
     <h1 class="fs-1">Welcome to Loop!</h1>
     <p class="fs-5">Welcome to Loop, your one-stop online shop for all your beverage cravings
         <br>
@@ -119,7 +144,7 @@
         <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
             <h2>Coffee</h2>
         <p>Awaken your senses with our rich, aromatic coffees. Start your day right!</p>
-        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        <a href="{{ route('orders.create') }}" class="btn btn-dark">Buy Here</a>
         </div>
       </div>
     </div>
@@ -134,7 +159,7 @@
         <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
             <h2>Tea</h2>
         <p>Indulge in the soothing tranquility of our finest teas. Find serenity in every sip.</p>
-        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        <a href="{{ route('orders.create') }}" class="btn btn-dark">Buy Here</a>
         </div>
       </div>
     </div>
@@ -149,7 +174,7 @@
         <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
             <h2>Juice</h2>
         <p>Revitalize your taste buds with our exquisite, handcrafted juices. Shop now!</p>
-        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        <a href="{{ route('orders.create') }}" class="btn btn-dark">Buy Here</a>
         </div>
       </div>
     </div>
@@ -164,7 +189,7 @@
         <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
             <h2>Water</h2>
         <p>Stay hydrated and refreshed with our pure, revitalizing water. Drink to your well-being.</p>
-        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        <a href="{{ route('orders.create') }}" class="btn btn-dark">Buy Here</a>
         </div>
       </div>
     </div>
@@ -179,7 +204,7 @@
         <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
             <h2>Soda</h2>
         <p>Fizz up your day with our sparkling selection of sodas. Add a pop of joy to your moments.</p>
-        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        <a href="{{ route('orders.create') }}" class="btn btn-dark">Buy Here</a>
         </div>
       </div>
     </div>
@@ -194,12 +219,40 @@
         <div class="deskripsi position-absolute bottom-0 start-2 w-100 pb-3 pl-5">
             <h2>Olive Oil</h2>
         <p>Elevate your culinary creations with our premium, flavorful olive oils. Taste the essence of excellence.</p>
-        <a href="{{ route('order') }}" class="btn btn-dark">Buy Here</a>
+        <a href="{{ route('orders.create') }}" class="btn btn-dark">Buy Here</a>
         </div>
       </div>
     </div>
   </div>
   <br><br>
+
+  <button id="scrollToTopBtn" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i> <!-- Ikon anak panah Font Awesome -->
+</button>
+
+
+  <script>
+    // Fungsi untuk menggulir halaman ke atas
+    function scrollToTop() {
+        document.body.scrollTop = 0; // Untuk peramban lama
+        document.documentElement.scrollTop = 0; // Untuk peramban modern
+    }
+
+    // Tampilkan tombol kembali ke atas saat pengguna menggulir halaman ke bawah
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>

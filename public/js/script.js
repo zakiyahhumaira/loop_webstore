@@ -13,4 +13,3 @@ function filterData(search) {
     });
 }
 
-

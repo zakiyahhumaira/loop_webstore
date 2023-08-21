@@ -11,7 +11,7 @@
   <style>
 
     .header {
-        background-color: #dfa87b;
+        background-color: #E7CEA6;
     }
 
     #scrollToTopBtn {

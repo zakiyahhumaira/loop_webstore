@@ -74,7 +74,7 @@
 <div class="container mt-3">
 <br/>
   <h3>Account Page</h3>
-  <p>Registeres Account</p>
+  <p>Registered Account</p>
 </div>
 
 <div class="container mt-3">
